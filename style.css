@@ -30,9 +30,23 @@ ul {
 
 li {
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+    position: relative; /* Kích hoạt vị trí tương đối cho mục */
+    padding-right: 40px; /* Tạo không gian bên phải cho nút */
 }
 
 li:last-child {
     border-bottom: none;
+}
+button.copy-button {
+    
+    position: absolute; /* Kích hoạt vị trí tuyệt đối cho nút */
+    top: 0; /* Đặt top là 0 để nút nằm ở góc trên cùng của mục */
+    right: 0; /* Đặt right là 0 để nút nằm ở góc bên phải của mục */
+    padding: 5px 10px; /* Tùy chỉnh độ lớn của nút */
+    background-color: #007bff; /* Màu nền của nút */
+    color: #fff; /* Màu chữ của nút */
+    border: none; /* Loại bỏ đường viền */
+    border-radius: 4px; /* Bo tròn góc của nút */
+    cursor: pointer; /* Biến con trỏ thành dấu nhấp chuột khi di chuột qua nút */
 }
