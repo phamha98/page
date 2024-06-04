@@ -860,6 +860,7 @@ function renderResults(results) {
 
 // Function to handle search
 function handleSearch(event) {
+
     const searchText = event.target.value.toLowerCase();
     const filteredData = data.filter(item => item.toLowerCase().includes(searchText));
     renderResults(filteredData);
@@ -867,6 +868,10 @@ function handleSearch(event) {
 
 // Attach event listener to search input
 document.getElementById('searchInput').addEventListener('input', handleSearch);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded')
+    handleSearch({ target: { value: '' } });
+});
 function copyToClipboard(text) {
     // Create a temporary textarea element
     const textarea = document.createElement('textarea');
@@ -890,4 +895,4 @@ const data = [
     ...tipTot,
     ...nvmCommands,
     ...nodeCommands
-]
+].sort()
