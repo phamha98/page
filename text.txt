@@ -1,63 +1,19 @@
-`sudo rm -rf /tmp/metro-*`,
-`npm start --reset-cache`,
-`git add . && git commit -m "" && git push`,
-`ssh-keygen`,
-`sudo chmod -R /user/path`,
-`sudo ./gradlew cleanBuildCache`,
-`npm install --legacy-peer-deps`,
-`npm install --save-dev jetifier`,
-`npx jetify`,
-`Update latest`,
-`sudo n latest`,
-`react-native run-android --deviceId=emulator-5554`,
-`emulator --list-avds`,
-`adb devices -l`,
-`adb -s emulator-5554 shell`,
-`adb -s emulator-5555 install helloWorld.apk`,
-`npx react-native start --port 8083`,
-`sudo chmod 755 android/gradlew`,
-`sudo chmod -R 0777 /tmp`,
-`adb reverse tcp:8081 tcp:8081`,
-`sudo ./gradlew --stop`,
-`sudo ./gradlew clean`,
-`sudo ln -s "$(which node)" /usr/local/bin/node`,
-`wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash`,
-`source ~/.profile`,
-`nvm ls-remote`,
-`nvm install 16.13.0`,
-`npm i -g npm@latest`,
-`sudo npm cache clean -f`,
-`sudo rm -rf node_modules`,
-`npm install -g appcenter-cli`,
-`appcenter login`,
-`npx react-native run-android --variant=release`,
-`cd android && ./gradlew assembleRelease`,
-`sudo ln -s $(which node) /usr/local/bin/node`,
-`sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* ~/.npm`,
-`sudo rm -rf /usr/local/lib/node*`,
-`sudo rm -rf /usr/local/bin/node*`,
-`sudo rm -rf /usr/local/include/node*`,
-`sudo apt-get purge nodejs npm`,
-`sudo apt autoremove`,
-`sudo ln -s $(which node) /usr/local/bin/node`,
-`nvm ls-remote`,
-`nvm install 16.15.1`,
-`adb -s emulator-5554 shell`,
-`adb -s emulator-5555 install helloWorld.apk`,
-`react-native run-android --deviceId=emulator-5554`,
-`npx react-native start --port 8083`,
-`emulator -avd Pixel_5_API_30 -gpu host -dns-server 8.8.8.8`,
-`emulator -avd Pixel_5_API_30 -gpu host -dns-server 8.8.8.8`,
-`rm -rf /tmp/metro-*`,
-`chmod -R 0777 /tmp`,
-`adb reverse tcp:8081 tcp:8081`,
-`adb devices`,
-`adb kill-server`,
-`adb start-server`,
-`adb devices`,
-`adb kill-server`,
-`adb start-server`,
-`rm -rf /tmp/metro-*`,
-`chmod -R 0777 /tmp`,
-`adb reverse tcp:8081 tcp:8081`,
-`emulator  @Pixel_3_API_30`,
+const nvmCommands = [
+    "nvm install <version>",       // Cài đặt một phiên bản Node.js mới.
+    "nvm use <version>",           // Sử dụng một phiên bản Node.js cụ thể.
+    "nvm ls",                      // Liệt kê tất cả các phiên bản Node.js đã được cài đặt.
+    "nvm ls-remote",               // Liệt kê tất cả các phiên bản Node.js có sẵn để cài đặt từ các nguồn từ xa.
+    "nvm current",                 // Hiển thị phiên bản Node.js đang được sử dụng.
+    "nvm alias <name> <version>",  // Đặt một alias cho một phiên bản Node.js cụ thể.
+    "nvm unalias <name>",          // Xóa bỏ một alias đã được đặt.
+    "nvm reinstall-packages <version>", // Cài lại tất cả các gói đã cài đặt trong một phiên bản Node.js cụ thể.
+    "nvm exec <version> <command>",     // Thực thi một lệnh trong một phiên bản Node.js cụ thể.
+    "nvm which <version>",               // Hiển thị đường dẫn tới thực thi của một phiên bản Node.js cụ thể.
+    "nvm cache dir",             // Hiển thị đường dẫn tới thư mục cache của nvm.
+    "nvm cache clear",           // Xóa bỏ tất cả các tập tin cache của nvm.
+    "nvm deactivate",            // Vô hiệu hóa nvm, quay lại sử dụng phiên bản Node.js hệ thống.
+    "nvm unload",                // Gỡ bỏ nvm khỏi môi trường hiện tại.
+    "nvm version",               // Hiển thị phiên bản của nvm.
+    "nvm --help"                 // Hiển thị trợ giúp về cách sử dụng nvm.
+    // Thêm các lệnh khác tại đây nếu cần
+];

@@ -1,4 +1,25 @@
+const nvmCommands = [
+    "nvm install <version>",       // Cài đặt một phiên bản Node.js mới.
+    "nvm use <version>",           // Sử dụng một phiên bản Node.js cụ thể.
+    "nvm ls",                      // Liệt kê tất cả các phiên bản Node.js đã được cài đặt.
+    "nvm ls-remote",               // Liệt kê tất cả các phiên bản Node.js có sẵn để cài đặt từ các nguồn từ xa.
+    "nvm current",                 // Hiển thị phiên bản Node.js đang được sử dụng.
+    "nvm alias <name> <version>",  // Đặt một alias cho một phiên bản Node.js cụ thể.
+    "nvm unalias <name>",          // Xóa bỏ một alias đã được đặt.
+    "nvm reinstall-packages <version>", // Cài lại tất cả các gói đã cài đặt trong một phiên bản Node.js cụ thể.
+    "nvm exec <version> <command>",     // Thực thi một lệnh trong một phiên bản Node.js cụ thể.
+    "nvm which <version>",               // Hiển thị đường dẫn tới thực thi của một phiên bản Node.js cụ thể.
+    "nvm cache dir",             // Hiển thị đường dẫn tới thư mục cache của nvm.
+    "nvm cache clear",           // Xóa bỏ tất cả các tập tin cache của nvm.
+    "nvm deactivate",            // Vô hiệu hóa nvm, quay lại sử dụng phiên bản Node.js hệ thống.
+    "nvm unload",                // Gỡ bỏ nvm khỏi môi trường hiện tại.
+    "nvm version",               // Hiển thị phiên bản của nvm.
+    "nvm --help"                 // Hiển thị trợ giúp về cách sử dụng nvm.
+    // Thêm các lệnh khác tại đây nếu cần
+];
+
 const tipTot = [
+    `nvm use 18`,
     `sudo rm -rf /tmp/metro-*`,
     `npm start --reset-cache`,
     `git add . && git commit -m "" && git push`,
@@ -778,17 +799,7 @@ const recent = [
     "pod install --color",
     "pod install --repo-update"
 ]
-const data = [
-    ...gitOptions,
-    ...sqlCommands,
-    ...adbCommands,
-    ...linuxCommandExamples,
-    ...objectPropertiesAndMethods,
-    ...recent,
-    ...arrayPropertiesAndMethods,
-    ...libraryReactNative,
-    ...tipTot
-]
+
 // Function to render search results
 function renderResults(results) {
     const resultList = document.getElementById('results');
@@ -845,3 +856,15 @@ function copyToClipboard(text) {
     document.body.removeChild(textarea); // Clean up
     alert('Copied : ' + text);
 }
+const data = [
+    ...gitOptions,
+    ...sqlCommands,
+    ...adbCommands,
+    ...linuxCommandExamples,
+    ...objectPropertiesAndMethods,
+    ...recent,
+    ...arrayPropertiesAndMethods,
+    ...libraryReactNative,
+    ...tipTot,
+    ...nvmCommands
+]
