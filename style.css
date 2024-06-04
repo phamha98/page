@@ -41,9 +41,7 @@ li {
 
 }
 li:hover {
-    border-width: 1;
-    border-color: red;
-    color: #45a049; 
+    color: red; 
 }
 code {
     /* background-color: #eee; */
