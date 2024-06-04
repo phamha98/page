@@ -1,3 +1,25 @@
+const gradleCommand = [
+    "./gradlew tasks",               // Liệt kê tất cả các task có sẵn trong dự án.
+    "./gradlew build",               // Xây dựng dự án.
+    "./gradlew clean",               // Xóa bỏ tất cả các tệp và thư mục được tạo ra trong quá trình xây dựng.
+    "./gradlew assemble",            // Tạo ra tất cả các sản phẩm được xây dựng mà không cần chạy bất kỳ kiểm tra nào.
+    "./gradlew test",                // Chạy các bài kiểm tra.
+    "./gradlew installDist",         // Sao chép các tệp và thư mục cần thiết cho quá trình chạy ứng dụng vào thư mục `build/install`.
+    "./gradlew clean build",         // Xóa bỏ tất cả các tệp và thư mục được tạo ra trước đó, sau đó xây dựng dự án.
+    "./gradlew tasks --all",         // Liệt kê tất cả các task có sẵn, bao gồm cả các task ẩn (hidden).
+    "./gradlew <taskName>",
+    "./gradlew build --profile",     // Xây dựng dự án với thông tin chi tiết về hiệu suất và thời gian (cần Gradle 2.4+).
+    "./gradlew dependencies",        // Hiển thị sơ đồ các phụ thuộc của dự án.
+    "./gradlew projects",            // Liệt kê tất cả các dự án con của dự án hiện tại.
+    "./gradlew help",
+    'gradle dist --exclude-task test',
+    'gradle test',
+    'gradle dependencies'
+]
+const nodeCommands = [
+    `dir /b /ad "%ProgramFiles%\nodejs | show nodejs Windows`,
+    `ls -d /usr/local/bin/node* | show nodejs Linux`
+]
 const nvmCommands = [
     "nvm install <version>",       // Cài đặt một phiên bản Node.js mới.
     "nvm use <version>",           // Sử dụng một phiên bản Node.js cụ thể.
@@ -852,9 +874,9 @@ function copyToClipboard(text) {
     textarea.style.position = 'fixed'; // Ensure it's out of view
     document.body.appendChild(textarea);
     textarea.select();
-    // document.execCommand('copy'); // Copy the text to clipboard
+    document.execCommand('copy'); // Copy the text to clipboard
     document.body.removeChild(textarea); // Clean up
-    alert('Copied : ' + text);
+    // alert('Copied : ' + text);
 }
 const data = [
     ...gitOptions,
@@ -866,5 +888,6 @@ const data = [
     ...arrayPropertiesAndMethods,
     ...libraryReactNative,
     ...tipTot,
-    ...nvmCommands
+    ...nvmCommands,
+    ...nodeCommands
 ]
