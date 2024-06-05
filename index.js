@@ -687,7 +687,7 @@ const recent = [
     'git commit --amend -m ""',
     'git log -1',
     'git push --force',
-    'git branch -m old-branch-name new-branch-name',
+    'git branch -m old-branch-name new-branch-name #(local)',
     'git checkout --ours ./ios  ',
     'git add ./ios',
     'git checkout --theirs src/conflicting_folder',
