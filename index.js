@@ -483,6 +483,8 @@ const gitOptions = [
     "git instaweb",
     "git interpret-trailers",
     "git log",
+    "git log feature",
+    "git log feature -n 10",
     "git ls-files",
     "git ls-remote",
     "git ls-tree",
