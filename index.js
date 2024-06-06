@@ -1,3 +1,9 @@
+const patchPackageCommand = [
+    `npm install patch-package --save-dev`,
+    `npx patch-package react-native-hexagon-svg`,
+    `patch -p1 < patches/react-native-hexagon-svg+2.0.4.patch`,
+    `npx patch-package #(all)`
+]
 const flexisipCommand = [
     `openssl pkcs12 -nodes -provider default -provider Legacy -in Voip_Certificates.p12 -out bundleId.voip.dev.pem`,
     `openssl pkcs12 -nodes -provider default -provider Legacy -in Certificates.p12 -out bundleId.prod.pem`,
@@ -933,5 +939,6 @@ const data = [
     ...tipTot,
     ...nvmCommands,
     ...nodeCommands,
-    ...flexisipCommand
+    ...flexisipCommand,
+    ...patchPackageCommand
 ].sort()
