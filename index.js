@@ -1,3 +1,60 @@
+
+function renderResults(results) {
+    const resultList = document.getElementById('results');
+    resultList.innerHTML = '';
+
+    if (results.length === 0) {
+        resultList.innerHTML = '<li>No results found</li>';
+        return;
+    }
+
+    results.forEach(result => {
+        const li = document.createElement('li');
+        const code = document.createElement('code');
+        code.textContent = result;
+        //li.textContent = result;
+
+        // Create a copy button
+        const copyButton = document.createElement('button');
+        // copyButton.textContent = 'Copyf';
+        const copyIcon = document.createElement('i');
+        copyIcon.className = 'fas fa-copy';
+        copyButton.className = 'copy-button'; // Thêm class copy-button
+        copyButton.appendChild(copyIcon);
+        copyButton.addEventListener('click', () => {
+            copyToClipboard(result);
+        });
+
+        // Append the copy button to the list item
+        li.appendChild(code);
+        li.appendChild(copyButton);
+
+        // Append the list item to the results list
+        resultList.appendChild(li);
+    });
+}
+function handleSearch(event) {
+
+    const searchText = event.target.value.toLowerCase();
+    const filteredData = data.filter(item => item.toLowerCase().includes(searchText));
+    renderResults(filteredData);
+}
+document.getElementById('searchInput').addEventListener('input', handleSearch);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded')
+    handleSearch({ target: { value: '' } });
+});
+function copyToClipboard(text) {
+    // Create a temporary textarea element
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed'; // Ensure it's out of view
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy'); // Copy the text to clipboard
+    document.body.removeChild(textarea); // Clean up
+    // alert('Copied : ' + text);
+}
 const patchPackageCommand = [
     `npm install patch-package --save-dev`,
     `npx patch-package react-native-hexagon-svg`,
@@ -871,63 +928,21 @@ const recent = [
     "pod install --color",
     "pod install --repo-update"
 ]
-function renderResults(results) {
-    const resultList = document.getElementById('results');
-    resultList.innerHTML = '';
-
-    if (results.length === 0) {
-        resultList.innerHTML = '<li>No results found</li>';
-        return;
-    }
-
-    results.forEach(result => {
-        const li = document.createElement('li');
-        const code = document.createElement('code');
-        code.textContent = result;
-        //li.textContent = result;
-
-        // Create a copy button
-        const copyButton = document.createElement('button');
-        // copyButton.textContent = 'Copyf';
-        const copyIcon = document.createElement('i');
-        copyIcon.className = 'fas fa-copy';
-        copyButton.className = 'copy-button'; // Thêm class copy-button
-        copyButton.appendChild(copyIcon);
-        copyButton.addEventListener('click', () => {
-            copyToClipboard(result);
-        });
-
-        // Append the copy button to the list item
-        li.appendChild(code);
-        li.appendChild(copyButton);
-
-        // Append the list item to the results list
-        resultList.appendChild(li);
-    });
-}
-function handleSearch(event) {
-
-    const searchText = event.target.value.toLowerCase();
-    const filteredData = data.filter(item => item.toLowerCase().includes(searchText));
-    renderResults(filteredData);
-}
-document.getElementById('searchInput').addEventListener('input', handleSearch);
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOMContentLoaded')
-    handleSearch({ target: { value: '' } });
-});
-function copyToClipboard(text) {
-    // Create a temporary textarea element
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.position = 'fixed'; // Ensure it's out of view
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy'); // Copy the text to clipboard
-    document.body.removeChild(textarea); // Clean up
-    // alert('Copied : ' + text);
-}
+const pingCommands = [
+    "ping google.com # Lệnh ping cơ bản",
+    "ping -c 4 google.com # Gửi 4 gói tin ICMP Echo Request",
+    "ping -i 2 google.com # Đặt khoảng thời gian giữa các gói tin là 2 giây",
+    "ping -s 100 google.com # Đặt kích thước gói tin là 100 bytes",
+    "ping -t 64 google.com # Đặt giá trị TTL là 64",
+    "ping -W 5 google.com # Đặt thời gian chờ mỗi phản hồi là 5 giây",
+    "ping -q google.com # Chạy ping ở chế độ im lặng, chỉ hiển thị tóm tắt",
+    "ping 8.8.8.8 # Kiểm tra kết nối đến địa chỉ IP cụ thể",
+    "ping -i 0.5 google.com # Đặt khoảng thời gian giữa các gói tin là 0.5 giây",
+    "ping -s 2000 google.com # Đặt kích thước gói tin là 2000 bytes",
+    "ping -c 10 google.com # Gửi 10 gói tin ICMP Echo Request",
+];
 const data = [
+    ...pingCommands,
     ...gitOptions,
     ...sqlCommands,
     ...adbCommands,
