@@ -954,7 +954,8 @@ const networkCheckCommands = [
     "nmcli con show # Hiển thị danh sách các kết nối mạng",
     "mtr google.com # Theo dõi và kiểm tra mạng liên tục",
     "dig google.com # Tra cứu thông tin DNS",
-    "host google.com # Tra cứu thông tin DNS đơn giản"
+    "host google.com # Tra cứu thông tin DNS đơn giản",
+    "nslookup google.com #Kiểm tra DNS",
 ];
 
 const data = [
