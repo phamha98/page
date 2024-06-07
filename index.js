@@ -941,7 +941,24 @@ const pingCommands = [
     "ping -s 2000 google.com # Đặt kích thước gói tin là 2000 bytes",
     "ping -c 10 google.com # Gửi 10 gói tin ICMP Echo Request",
 ];
+const networkCheckCommands = [
+    "ping google.com # Kiểm tra kết nối cơ bản đến một tên miền",
+    "ping -c 4 google.com # Gửi 4 gói tin ICMP Echo Request",
+    "traceroute google.com # Theo dõi đường đi của các gói tin đến đích",
+    "ifconfig # Hiển thị cấu hình mạng và thông tin về các giao diện mạng",
+    "ip addr show # Hiển thị thông tin địa chỉ IP của các giao diện mạng",
+    "netstat -tuln # Hiển thị các kết nối mạng và dịch vụ đang lắng nghe",
+    "ss -tuln # Hiển thị các socket và dịch vụ đang lắng nghe (thay thế netstat)",
+    "iwconfig # Hiển thị thông tin mạng không dây (WiFi)",
+    "nmcli dev status # Hiển thị trạng thái các thiết bị mạng",
+    "nmcli con show # Hiển thị danh sách các kết nối mạng",
+    "mtr google.com # Theo dõi và kiểm tra mạng liên tục",
+    "dig google.com # Tra cứu thông tin DNS",
+    "host google.com # Tra cứu thông tin DNS đơn giản"
+];
+
 const data = [
+    ...networkCheckCommands,
     ...pingCommands,
     ...gitOptions,
     ...sqlCommands,
