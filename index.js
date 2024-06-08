@@ -43,6 +43,7 @@ document.getElementById('searchInput').addEventListener('input', handleSearch);
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded')
     handleSearch({ target: { value: '' } });
+    document.getElementById('searchInput').focus();
 });
 function copyToClipboard(text) {
     // Create a temporary textarea element
