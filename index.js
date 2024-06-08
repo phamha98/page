@@ -958,8 +958,16 @@ const networkCheckCommands = [
     "host google.com # Tra cứu thông tin DNS đơn giản",
     "nslookup google.com #Kiểm tra DNS",
 ];
-
+const commonCommand = [
+    `rm -rf ~/Library/Caches/CocoaPods`,
+    `rm -rf Pods`,
+    `rm -rf ~/Library/Developer/Xcode/DerivedData/*`,
+    `pod deintegrate`,
+    `pod setup`,
+    `pod install`,
+]
 const data = [
+    ...commonCommand,
     ...networkCheckCommands,
     ...pingCommands,
     ...gitOptions,
