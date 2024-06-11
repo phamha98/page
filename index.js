@@ -965,6 +965,8 @@ const commonCommand = [
     `pod deintegrate`,
     `pod setup`,
     `pod install`,
+    `patch -p1 < patches/@rocket.chat+sdk+1.3.0-mobile.patch`,
+    `patch -R -p1 < patches/@rocket.chat+sdk+1.3.0-mobile.patch`
 ]
 const data = [
     ...commonCommand,
