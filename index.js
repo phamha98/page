@@ -667,8 +667,8 @@ const gitOptions = [
     `git stash clear`,
     `git stash branch <branch_name>`,
     `git stash show`,
-    `git stash show -p`
-        `git stash push -p`,
+    `git stash show -p`,
+    `git stash push -p`,
     "git status",
     "git stripspace",
     "git submodule",
