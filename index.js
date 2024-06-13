@@ -982,6 +982,8 @@ const commonCommand = [
     `patch -R -p1 < patches/@rocket.chat+sdk+1.3.0-mobile.patch`,
     `git apply hello.patch`,
     `git apply --reverse hello.patch`,
+    `yarn install --verbose`,
+
 ]
 const data = [
     ...commonCommand,
