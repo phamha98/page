@@ -983,6 +983,7 @@ const commonCommand = [
     `git apply hello.patch`,
     `git apply --reverse hello.patch`,
     `yarn install --verbose`,
+    `yarn clean cache`,
 
 ]
 const data = [
